@@ -27,10 +27,10 @@ class CountryPage extends StatelessWidget {
                   padding: EdgeInsets.all(20),
                   child: Column(
                     children: [
-                      Flag.fromString('${countryModel.code}', height: null, width: null),
-                      Text("Country:  "+countryModel.name,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
-                      Text("Langiage:  "+countryModel.native,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500)),
-                      Text("Phone code:  "+countryModel.phone,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500)),
+                      Flag.fromString('${state.country!.code}', height: null, width: null),
+                      Text("Country:  "+state.country!.name,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                      Text("Langiage:  "+state.country!.native,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500)),
+                      Text("Phone code:  "+state.country!.phone,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500)),
 
                     ],
                   ),
