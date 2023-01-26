@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graphql_task/data/models/country_model/country_model.dart';
 import 'package:graphql_task/state_managers/bloc/countries_bloc/countries_bloc.dart';
+import 'package:graphql_task/ui/country_page.dart';
 
 class AllCountriesPage extends StatelessWidget {
   const AllCountriesPage({Key? key}) : super(key: key);
@@ -27,7 +28,11 @@ class AllCountriesPage extends StatelessWidget {
                 physics: const BouncingScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: countries.length,
-                itemBuilder: (context, index) =>ListTile(title: Text(countries[index].name)),);
+                itemBuilder: (context, index) =>InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => CountryPage(countryModel: countries[index]),));
+                  },
+                    child: ListTile(title: Text(countries[index].name))),);
             }
             return Container();
           },

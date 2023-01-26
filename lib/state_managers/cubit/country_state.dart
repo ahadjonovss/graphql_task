@@ -3,15 +3,23 @@ part of 'country_cubit.dart';
 
 class CountryState extends Equatable{
   String error;
-  List<CountryModel> countries;
+  CountryModel? country;
   Status status;
 
-  CountryState({required this.status, required this.countries,required  this.error});
+  CountryState({required this.status,  this.country,required  this.error});
+
+  copyWith({
+    String? error,
+    Status? status,
+    CountryModel? country,
+}){
+  return CountryState(status: status??this.status, country: country??this.country, error: error??this.error);
+  }
   @override
   // TODO: implement props
   List<Object?> get props => [
     error,
-    countries,
+    country,
     status
   ];
 
