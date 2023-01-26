@@ -12,7 +12,7 @@ class CountryCubit extends Cubit<CountryState> {
 
   getCountry(String name) async {
     emit(state.copyWith(status: Status.LOADING));
-    // await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 2));
     try{
       final country = await getIt<CountriesApiClient>().getSingleCountry(name);
       emit(state.copyWith(status: Status.SUCCESS,country:country));

@@ -15,9 +15,10 @@ class CountriesBloc extends Bloc<GetAllCountries, CountriesState> {
 
   getAllCountries(event, emit) async {
   emit(GettingCountriesInProgress());
-  // await Future.delayed(Duration(seconds: 2));
+  await Future.delayed(Duration(seconds: 2));
   try{
     final countries = await getIt<CountriesApiClient>().getCountries();
+    print(countries);
     emit(GettingCountriesInSuccess(countries: countries));
   }catch(e){
     print(e.toString());
