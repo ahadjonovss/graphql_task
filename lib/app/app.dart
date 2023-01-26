@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:graphql_task/bloc/countries_bloc/countries_bloc.dart';
 import 'package:graphql_task/ui/all_countries_page.dart';
+import 'package:graphql_task/state_managers/bloc/countries_bloc/countries_bloc.dart';
+
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);

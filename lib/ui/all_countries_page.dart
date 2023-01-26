@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:graphql_task/bloc/countries_bloc/countries_bloc.dart';
 import 'package:graphql_task/data/models/country_model/country_model.dart';
+import 'package:graphql_task/state_managers/bloc/countries_bloc/countries_bloc.dart';
 
 class AllCountriesPage extends StatelessWidget {
   const AllCountriesPage({Key? key}) : super(key: key);
