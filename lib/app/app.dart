@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:graphql_task/bloc/countries_bloc/countries_bloc.dart';
 import 'package:graphql_task/ui/all_countries_page.dart';
 
 class App extends StatelessWidget {
@@ -6,7 +8,11 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MyApp();
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => CountriesBloc(),)
+      ],
+        child: MyApp());
   }
 }
 
