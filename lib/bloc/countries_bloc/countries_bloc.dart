@@ -15,6 +15,7 @@ class CountriesBloc extends Bloc<GetAllCountries, CountriesState> {
 
   getAllCountries(event, emit) async {
   emit(GettingCountriesInProgress());
+  await Future.delayed(Duration(seconds: 2));
   try{
     final countries = await getIt<CountriesApiClient>().getCountries();
     emit(GettingCountriesInSuccess(countries: countries));
