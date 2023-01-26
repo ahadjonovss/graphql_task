@@ -7,9 +7,9 @@ import 'package:meta/meta.dart';
 part 'countries_event.dart';
 part 'countries_state.dart';
 
-class CountriesBloc extends Bloc<CountriesEvent, CountriesState> {
+class CountriesBloc extends Bloc<GetAllCountries, CountriesState> {
   CountriesBloc() : super(CountriesInitial()) {
-    on<CountriesEvent>((event, emit) {
+    on<GetAllCountries>((event, emit) {
       // TODO: implement event handler
     });
   }
